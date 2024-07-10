@@ -1,6 +1,7 @@
 package com.haceb.setps;
 
 import com.haceb.pageObject.ProductsPage;
+import com.haceb.utils.WaitUtils;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
@@ -18,12 +19,7 @@ public class ProductSteps {
 
     @Step("The user selects the product randomly")
     public void theUserSelectsTheProductRandomly() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        WaitUtils.waitForSeconds(5);
         List<WebElement> collections = productsPage.getDriver().findElements(productsPage.getBtnSeeProduct());
         WebElement element = selectRandom(collections);
         setNameProduct(element.getText());

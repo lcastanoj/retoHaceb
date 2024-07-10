@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -35,6 +36,11 @@ public class AddProductToCartStepDef {
     @BeforeEach
     public void setUpTest() {
         driver = new ChromeDriver();
+    }
+
+    @AfterAll
+    public static void closeDriver(){
+        WebDriverManager.chromedriver().quit();
     }
 
     @Given("the user opens the browser at the Haceb url")

@@ -21,6 +21,6 @@ public class Validate {
                 String.valueOf(payDetailsCart.getDriver().
                         findElement(payDetailsCart.getLblProductName()).getText())
         );
-
+        System.out.println(getNameProduct());
     }
 }
