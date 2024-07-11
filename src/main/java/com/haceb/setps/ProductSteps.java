@@ -1,7 +1,7 @@
 package com.haceb.setps;
 
 import com.haceb.pageObject.ProductsPage;
-import com.haceb.utils.WaitUtils;
+import com.haceb.utils.SeleniumUtils;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static com.haceb.models.NameProductModel.setNameProduct;
-import static com.haceb.utils.RamdonSelect.selectRandom;
+import static com.haceb.models.Models.setNameProduct;
+import static com.haceb.utils.SeleniumUtils.selectRandom;
 
 public class ProductSteps {
     @Page
@@ -19,7 +19,7 @@ public class ProductSteps {
 
     @Step("The user selects the product randomly")
     public void theUserSelectsTheProductRandomly() {
-        WaitUtils.waitForSeconds(5);
+        SeleniumUtils.waitForSeconds(2);
         List<WebElement> collections = productsPage.getDriver().findElements(productsPage.getBtnSeeProduct());
         WebElement element = selectRandom(collections);
         setNameProduct(element.getText());

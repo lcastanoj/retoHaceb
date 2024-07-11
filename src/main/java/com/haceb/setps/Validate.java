@@ -4,7 +4,7 @@ import com.haceb.pageObject.PayDetailsCart;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
 
-import static com.haceb.models.NameProductModel.getNameProduct;
+import static com.haceb.models.Models.getNameProduct;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Validate {
@@ -13,7 +13,6 @@ public class Validate {
 
     @Step
     public void assertion() {
-
         String product = getNameProduct();
 
         assertEquals(

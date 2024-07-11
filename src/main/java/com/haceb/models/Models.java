@@ -1,6 +1,6 @@
 package com.haceb.models;
 
-public class NameProductModel {
+public class Models {
     private static String nameProduct;
 
     public static String getNameProduct() {
@@ -8,6 +8,6 @@ public class NameProductModel {
     }
 
     public static void setNameProduct(String nameProduct) {
-        NameProductModel.nameProduct = nameProduct;
+        Models.nameProduct = nameProduct;
     }
 }

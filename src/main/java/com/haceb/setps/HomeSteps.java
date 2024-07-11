@@ -9,10 +9,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
-import java.util.Random;
 
-import static com.haceb.models.NameProductModel.setNameProduct;
-import static com.haceb.utils.RamdonSelect.selectRandom;
+import static com.haceb.utils.SeleniumUtils.selectRandom;
 
 public class HomeSteps {
     @Page
